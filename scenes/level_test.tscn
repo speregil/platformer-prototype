@@ -1,0 +1,10 @@
+[gd_scene load_steps=2 format=3 uid="uid://dxcd1ecsc58dn"]
+
+[ext_resource type="PackedScene" uid="uid://b4olkdy5o4t51" path="res://scenes/player/player.tscn" id="1_e73ws"]
+
+[node name="Level_test" type="Node2D"]
+
+[node name="Player" parent="." instance=ExtResource("1_e73ws")]
+position = Vector2(183, 78)
+top_acceleration = 250.0
+delta_acceleration = 15.0
