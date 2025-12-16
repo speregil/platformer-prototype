@@ -8,9 +8,7 @@
 
 [node name="Player" parent="." instance=ExtResource("1_e73ws")]
 position = Vector2(241, 512)
-top_acceleration = 300.0
-delta_acceleration = 15.0
-jump_speed = 450.0
+midair_acceleration_factor = 0.8
 
 [node name="Platforms" type="Node" parent="."]
 
