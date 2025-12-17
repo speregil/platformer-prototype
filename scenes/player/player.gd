@@ -12,14 +12,15 @@ enum State {MOVING, JUMPING, FALLING}					## Enumeration to control the state ma
 @export var midair_acceleration_factor: float = 0.5		## Rate at which the player deaccelarates midair
 @export var jump_speed: float = 450.0					## Speed for jumping
 
-@onready var animated_sprite = $AnimatedSprite
+@onready var animated_sprite = $AnimatedSprite			## Reference to the sprite and animations resources
 
-var current_state: State = State.MOVING
-var direction: float = 0.0				## Movement direction in X
-var acceleration: float = 0.0			## Current acceleration to calculate movement speed
-var acceleration_modifier = 1.0
-var momentum_dir: float = 0.0			## Storages the movement direction before desacelerating
-var can_anim_fall: bool = true
+var current_state: State = State.MOVING					## Current state of the player
+var direction: float = 0.0								## Movement direction in X
+var acceleration: float = 0.0							## Current acceleration to calculate movement speed
+var acceleration_modifier = 1.0							## Scale modifier to the acceleration
+var momentum_dir: float = 0.0							## Storages the movement direction before desacelerating
+
+var can_anim_fall: bool = true							## Flag to control the falling animation
 
 ##--------------------------------------------------------------------------------------------------
 ## Functions
@@ -38,26 +39,25 @@ func _move() -> void:
 	## Fall speed based on current gravity
 	velocity.y += GlobalSettings._get_gravity()
 	
-	if current_state == State.JUMPING:
+	if current_state == State.JUMPING: ## When jumping, keep accelerating with the propoer factor
 		acceleration_modifier = midair_acceleration_factor
 		_accelerate()
-	elif is_on_floor():
+	elif is_on_floor(): ## When on the floor, accelerate and deacel as normal
 		current_state = State.MOVING
 		acceleration_modifier = 1.0
 		
-		## Calculates speed in X base on current input
 		if direction != 0.0:
 			_accelerate()
 			momentum_dir = direction
 		else:
 			_deaccelerate()
-	elif current_state == State.FALLING:
+	elif current_state == State.FALLING: ## Keep accelerating when falling eith the proper factor
 		acceleration_modifier = midair_acceleration_factor
 		_accelerate()
-	else:
+	else: ## if you are not moving or doing anything else, then you must be falling
 		current_state = State.FALLING
 	
-	## Let the engine move and collide
+	## Let the engine move the object
 	move_and_slide()
 
 ## ##
@@ -103,7 +103,10 @@ func _get_input() -> void:
 	
 	if Input.is_action_just_pressed("jump"):
 		current_state = State.JUMPING
-	
+
+## ##
+## Controls the execution of animations base on the current state of the player
+## ##
 func _animate() -> void:
 	if current_state == State.MOVING:
 		can_anim_fall = true

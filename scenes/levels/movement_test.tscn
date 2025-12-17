@@ -1,0 +1,50 @@
+[gd_scene load_steps=4 format=3 uid="uid://dxcd1ecsc58dn"]
+
+[ext_resource type="PackedScene" uid="uid://b4olkdy5o4t51" path="res://scenes/player/player.tscn" id="1_e73ws"]
+[ext_resource type="PackedScene" uid="uid://djwsnxgs0yoyy" path="res://scenes/ground.tscn" id="2_vbogn"]
+[ext_resource type="PackedScene" uid="uid://cqloy5i47ou3l" path="res://scenes/boundary.tscn" id="3_08uda"]
+
+[node name="MovementTest" type="Node2D"]
+
+[node name="Player" parent="." instance=ExtResource("1_e73ws")]
+position = Vector2(241, 512)
+midair_acceleration_factor = 0.8
+
+[node name="Platforms" type="Node" parent="."]
+
+[node name="Ground" parent="Platforms" instance=ExtResource("2_vbogn")]
+position = Vector2(0, 596)
+
+[node name="Ground5" parent="Platforms" instance=ExtResource("2_vbogn")]
+position = Vector2(595, 467)
+
+[node name="Ground6" parent="Platforms" instance=ExtResource("2_vbogn")]
+position = Vector2(844, 374)
+
+[node name="Ground7" parent="Platforms" instance=ExtResource("2_vbogn")]
+position = Vector2(998, 374)
+
+[node name="Ground8" parent="Platforms" instance=ExtResource("2_vbogn")]
+position = Vector2(549, 231)
+
+[node name="Ground9" parent="Platforms" instance=ExtResource("2_vbogn")]
+position = Vector2(63, 277)
+
+[node name="Ground2" parent="Platforms" instance=ExtResource("2_vbogn")]
+position = Vector2(155, 596)
+
+[node name="Ground3" parent="Platforms" instance=ExtResource("2_vbogn")]
+position = Vector2(310, 596)
+
+[node name="Ground4" parent="Platforms" instance=ExtResource("2_vbogn")]
+position = Vector2(466, 596)
+
+[node name="Boundaries" type="Node" parent="."]
+
+[node name="Boundary" parent="Boundaries" instance=ExtResource("3_08uda")]
+position = Vector2(-10, 333)
+scale = Vector2(1, 33.440002)
+
+[node name="Boundary2" parent="Boundaries" instance=ExtResource("3_08uda")]
+position = Vector2(1164, 333)
+scale = Vector2(1, 33.440002)
