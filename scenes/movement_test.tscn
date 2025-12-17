@@ -28,7 +28,7 @@ position = Vector2(998, 374)
 position = Vector2(549, 231)
 
 [node name="Ground9" parent="Platforms" instance=ExtResource("2_vbogn")]
-position = Vector2(2, 277)
+position = Vector2(63, 277)
 
 [node name="Ground2" parent="Platforms" instance=ExtResource("2_vbogn")]
 position = Vector2(155, 596)
