@@ -1,13 +1,21 @@
-[gd_scene load_steps=4 format=3 uid="uid://culvktmkd6rav"]
+[gd_scene load_steps=5 format=3 uid="uid://culvktmkd6rav"]
 
 [ext_resource type="Script" uid="uid://h4jelhiamug6" path="res://scenes/game.gd" id="1_e2o6t"]
 [ext_resource type="PackedScene" uid="uid://b4olkdy5o4t51" path="res://scenes/player/player.tscn" id="2_feb5d"]
+[ext_resource type="Script" uid="uid://dhd0mf4a1xp8k" path="res://scenes/camera.gd" id="2_lbhrr"]
 [ext_resource type="PackedScene" uid="uid://b7lq0do01nnnw" path="res://scenes/levels/level_testA.tscn" id="3_feb5d"]
 
 [node name="Game" type="Node2D"]
 script = ExtResource("1_e2o6t")
 
-[node name="Player" parent="." instance=ExtResource("2_feb5d")]
-position = Vector2(834, 538)
+[node name="Camera2D" type="Camera2D" parent="."]
+position = Vector2(351, 31)
+zoom = Vector2(2, 2)
+script = ExtResource("2_lbhrr")
 
-[node name="Level_Test" parent="." instance=ExtResource("3_feb5d")]
+[node name="Player" parent="." instance=ExtResource("2_feb5d")]
+position = Vector2(116, 193)
+
+[node name="Level_Container" type="Node" parent="."]
+
+[node name="Level_Test" parent="Level_Container" instance=ExtResource("3_feb5d")]
