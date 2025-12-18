@@ -1,10 +1,13 @@
-[gd_scene load_steps=2 format=3 uid="uid://cqloy5i47ou3l"]
+[gd_scene load_steps=3 format=3 uid="uid://cqloy5i47ou3l"]
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_qfxeu"]
+[ext_resource type="Script" uid="uid://7e3gj30l3mul" path="res://scenes/boundary.gd" id="1_6flaw"]
 
-[node name="Boundary" type="Node2D"]
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_6flaw"]
 
-[node name="StaticBody2D" type="StaticBody2D" parent="."]
+[node name="Boundary" type="Area2D"]
+script = ExtResource("1_6flaw")
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D"]
-shape = SubResource("RectangleShape2D_qfxeu")
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("RectangleShape2D_6flaw")
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]

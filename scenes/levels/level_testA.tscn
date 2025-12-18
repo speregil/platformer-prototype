@@ -1,0 +1,49 @@
+[gd_scene load_steps=3 format=3 uid="uid://b7lq0do01nnnw"]
+
+[ext_resource type="PackedScene" uid="uid://cqloy5i47ou3l" path="res://scenes/boundary.tscn" id="2_ckn30"]
+[ext_resource type="PackedScene" uid="uid://djwsnxgs0yoyy" path="res://scenes/ground.tscn" id="2_d5kir"]
+
+[node name="Level_Test" type="Node2D"]
+
+[node name="Ground" parent="." instance=ExtResource("2_d5kir")]
+position = Vector2(858, 566)
+
+[node name="Ground8" parent="." instance=ExtResource("2_d5kir")]
+position = Vector2(696, 566)
+
+[node name="Ground9" parent="." instance=ExtResource("2_d5kir")]
+position = Vector2(536, 564)
+
+[node name="Ground10" parent="." instance=ExtResource("2_d5kir")]
+position = Vector2(374, 562)
+
+[node name="Ground11" parent="." instance=ExtResource("2_d5kir")]
+position = Vector2(214, 568)
+
+[node name="Ground12" parent="." instance=ExtResource("2_d5kir")]
+position = Vector2(56, 570)
+
+[node name="Ground13" parent="." instance=ExtResource("2_d5kir")]
+position = Vector2(-104, 568)
+
+[node name="Ground5" parent="." instance=ExtResource("2_d5kir")]
+position = Vector2(1535, 566)
+
+[node name="Ground6" parent="." instance=ExtResource("2_d5kir")]
+position = Vector2(1701, 563)
+
+[node name="Ground7" parent="." instance=ExtResource("2_d5kir")]
+position = Vector2(1872, 563)
+
+[node name="Ground2" parent="." instance=ExtResource("2_d5kir")]
+position = Vector2(1366, 569)
+
+[node name="Ground3" parent="." instance=ExtResource("2_d5kir")]
+position = Vector2(1196, 566)
+
+[node name="Ground4" parent="." instance=ExtResource("2_d5kir")]
+position = Vector2(1021, 566)
+
+[node name="Boundary" parent="." instance=ExtResource("2_ckn30")]
+position = Vector2(1862, 377)
+scale = Vector2(1, 18.240002)

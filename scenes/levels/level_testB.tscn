@@ -1,0 +1,26 @@
+[gd_scene load_steps=2 format=3 uid="uid://de1h3airbr1ot"]
+
+[ext_resource type="PackedScene" uid="uid://djwsnxgs0yoyy" path="res://scenes/ground.tscn" id="2_skuyd"]
+
+[node name="Level_Test" type="Node2D"]
+
+[node name="Ground" parent="." instance=ExtResource("2_skuyd")]
+position = Vector2(-12, 566)
+
+[node name="Ground5" parent="." instance=ExtResource("2_skuyd")]
+position = Vector2(648, 443)
+
+[node name="Ground6" parent="." instance=ExtResource("2_skuyd")]
+position = Vector2(802, 440)
+
+[node name="Ground7" parent="." instance=ExtResource("2_skuyd")]
+position = Vector2(959, 443)
+
+[node name="Ground2" parent="." instance=ExtResource("2_skuyd")]
+position = Vector2(484, 446)
+
+[node name="Ground3" parent="." instance=ExtResource("2_skuyd")]
+position = Vector2(303, 563)
+
+[node name="Ground4" parent="." instance=ExtResource("2_skuyd")]
+position = Vector2(145, 566)

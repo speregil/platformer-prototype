@@ -13,6 +13,7 @@ enum State {MOVING, JUMPING, FALLING}					## Enumeration to control the state ma
 @export var jump_speed: float = 450.0					## Speed for jumping
 
 @onready var animated_sprite = $AnimatedSprite			## Reference to the sprite and animations resources
+@onready var game_manager = $".."
 
 var current_state: State = State.MOVING					## Current state of the player
 var direction: float = 0.0								## Movement direction in X
@@ -37,10 +38,9 @@ func _process(_delta: float) -> void:
 ## ##
 func _move() -> void:
 	## Fall speed based on current gravity
-	velocity.y += GlobalSettings._get_gravity()
+	velocity.y += game_manager._get_gravity()
 	
 	if current_state == State.JUMPING: ## When jumping, keep accelerating with the propoer factor
-		acceleration_modifier = midair_acceleration_factor
 		_accelerate()
 	elif is_on_floor(): ## When on the floor, accelerate and deacel as normal
 		current_state = State.MOVING
